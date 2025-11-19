@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .grid {
@@ -23,6 +24,10 @@ aside {
     align-content: start;
     gap: 2rem;
     color: white;
+}
+
+aside svg {
+    fill: white;
 }
 
 nav {
@@ -96,13 +101,16 @@ input {
     gap: 1rem;
 }
 
+#search-icon {
+    cursor: pointer;
+}
+
 #profile-upper {
     border-radius: 1rem;
 }
 
-.profile-lower {
+.profile-lower, .trending-profile {
     background-color: rgba(211, 211, 211, 0.7);
-    border: 1px solid black;
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
@@ -130,8 +138,82 @@ input {
 
 main {
     background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
-aside svg {
-    fill: white;
+.projects {
+    grid-row: 1 / 3;
+    margin: 1rem;
+}
+
+.projects h2, .partone h2, .parttwo h2 {
+    margin: 10px 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-content: start;
+    gap: 2rem;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    height: 14rem;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.5rem;
+    box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    background-color: #FFC300;
+}
+
+.card h3 {
+    margin-bottom: 5px;
+}
+
+.action {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.partone, .parttwo {
+    margin: 1rem;
+}
+
+.annoucements, .trending {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 6px rgba(0,0,0,0.15);
+}
+
+p {
+    color: rgb(108, 108, 108);
+}
+
+hr {
+    color: lightgray;
 }
